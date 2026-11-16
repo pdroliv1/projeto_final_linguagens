@@ -1,9 +1,9 @@
-# Análise de Roubos de Veículos no Rio de Janeiro (2003–2022)
+# Análise de Roubos de Veículos no Rio de Janeiro (2003-2022)
 
-**Disciplina:** Linguagem de Programação — Análise e Visualização de Dados com Python  
-**Curso:** Bacharelado em Sistemas de Informação — 6º Período  
+**Disciplina:** Linguagem de Programação  
+**Curso:** Sistemas de Informação - 6° Período  
 **Instituição:** UnilaSalle Rio de Janeiro  
-**Autor:** Pedro Oliv  
+**Autor:** Pedro Rigo e Rafael Rigo
 
 ---
 
@@ -17,7 +17,7 @@ O projeto segue os princípios FAIR e disponibiliza o artigo acadêmico completo
 
 ## Fonte dos dados
 
-[data.rio — ISP/RJ](https://www.data.rio/documents/5f63cb34f78b41eb9212f4de42401356/about)  
+[data.rio - ISP/RJ](https://www.data.rio/documents/5f63cb34f78b41eb9212f4de42401356/about)  
 Licença: CC BY 4.0
 
 ## Artigo publicado
@@ -35,7 +35,7 @@ projeto_final_linguagens/
 ├── data/
 │   ├── raw/
 │   │   └── download_data.py    # script para baixar o dataset
-│   ├── processed/              # dados limpos (.csv.gz) — gerado pelo ETL
+│   ├── processed/              # dados limpos (.csv.gz) - gerado pelo ETL
 │   └── data_dictionary.md
 ├── notebooks/
 │   └── analise_exploratoria.ipynb
@@ -44,7 +44,7 @@ projeto_final_linguagens/
 │   └── etl.py
 └── docs/
     ├── index.html
-    └── assets/                 # figuras interativas (.html) — geradas pelo notebook
+    └── assets/                 # figuras interativas (.html) - geradas pelo notebook
 ```
 
 ## Como executar
