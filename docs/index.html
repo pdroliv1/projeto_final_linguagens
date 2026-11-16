@@ -101,6 +101,14 @@
     .keywords { font-size: 0.88rem; color: var(--muted); margin-top: 0.6rem; }
     .keywords strong { color: var(--text); }
 
+    /* ── Sumário ── */
+    .toc-list { list-style: none; padding: 0; columns: 2; column-gap: 2rem; }
+    .toc-list li { padding: 0.2rem 0; font-size: 0.95rem; break-inside: avoid; }
+    .toc-list a { text-decoration: none; }
+    .toc-list a:hover { text-decoration: underline; }
+    
+    @media (max-width: 600px) { .toc-list { columns: 1; } }
+
     /* ── Research questions ── */
     .rq-list { list-style: none; padding: 0; }
     .rq-list li {
@@ -229,6 +237,19 @@
       </p>
     </div>
   </section>
+
+  <!-- SUMÁRIO -->
+  <section id="sumario">
+    <h2>Sumário</h2>
+    <ul class="toc-list">
+      <li><a href="#introducao">1. Introdução</a></li>
+      <li><a href="#metodologia">2. Metodologia e Pipeline de Dados</a></li>
+      <li><a href="#resultados">3. Resultados e Discussão</a></li>
+      <li><a href="#conclusao">4. Conclusão</a></li>
+      <li><a href="#fair">5. Disponibilidade dos Dados e Declaração FAIR</a></li>
+      <li><a href="#referencias">6. Referências</a></li>
+    </ul>
+</section>
 
   <!-- 1. INTRODUÇÃO -->
   <section id="introducao">
