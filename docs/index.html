@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roubos de Veículos no Rio de Janeiro (2003–2022)</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent: #c0392b;
+      --bg: #f9f9f7;
+      --surface: #ffffff;
+      --text: #222;
+      --muted: #555;
+      --border: #d6d6d6;
+      --radius: 6px;
+      --max-width: 860px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Georgia", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 0 1rem;
+    }
+
+    a { color: var(--primary); }
+
+    /* ── Header ── */
+    header {
+      background: var(--primary);
+      color: #fff;
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      max-width: var(--max-width);
+      margin: 0 auto 1rem;
+      line-height: 1.4;
+    }
+
+    .meta { font-size: 0.88rem; opacity: 0.85; max-width: var(--max-width); margin: 0 auto; }
+    .meta p { margin: 0.2rem 0; }
+
+    .badges {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .badge:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: var(--max-width);
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    section { background: var(--surface); border-radius: var(--radius); padding: 1.8rem 2rem; border: 1px solid var(--border); }
+
+    h2 {
+      font-size: 1.15rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 { font-size: 1rem; color: var(--accent); margin: 1.2rem 0 0.4rem; }
+
+    p { margin-bottom: 0.9rem; }
+
+    .abstract-box {
+      background: #f0f4f8;
+      border-left: 4px solid var(--primary);
+      padding: 1rem 1.2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .keywords { font-size: 0.88rem; color: var(--muted); margin-top: 0.6rem; }
+    .keywords strong { color: var(--text); }
+
+    /* ── Research questions ── */
+    .rq-list { list-style: none; padding: 0; }
+    .rq-list li {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.6rem;
+      background: #fdf5f5;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .rq-list li strong { color: var(--accent); }
+
+    /* ── Code blocks ── */
+    pre {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: var(--radius);
+      padding: 1rem 1.2rem;
+      overflow-x: auto;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      margin: 0.8rem 0;
+    }
+
+    code { font-family: "Fira Code", "Courier New", monospace; }
+
+    /* ── Charts ── */
+    .chart-container {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin: 1rem 0;
+    }
+
+    .chart-container iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      display: block;
+    }
+
+    .chart-caption {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+      padding: 0.4rem;
+      background: #fafafa;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── FAIR block ── */
+    .fair-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 600px) { .fair-grid { grid-template-columns: 1fr; } }
+
+    .fair-item {
+      background: #f0f4f8;
+      border-radius: var(--radius);
+      padding: 0.8rem 1rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    .fair-item strong { display: block; color: var(--primary); font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .fair-item span { font-size: 0.85rem; color: var(--muted); }
+
+    /* ── References ── */
+    .ref-list { list-style: none; padding: 0; }
+    .ref-list li { font-size: 0.88rem; padding: 0.3rem 0; border-bottom: 1px solid #eee; }
+    .ref-list li:last-child { border-bottom: none; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Análise da Evolução dos Roubos de Veículos no Município do Rio de Janeiro (2003–2022)</h1>
+  <div class="meta">
+    <p><strong>Autor:</strong> Pedro Oliv</p>
+    <p><strong>Instituição:</strong> UnilaSalle Rio de Janeiro &nbsp;|&nbsp; Bacharelado em Sistemas de Informação — 6º Período</p>
+    <p><strong>Disciplina:</strong> Linguagem de Programação (Análise e Visualização de Dados com Python)</p>
+    <p><strong>Orientador:</strong> [Nome do Professor]</p>
+  </div>
+  <div class="badges">
+    <a class="badge" href="https://github.com/pdroliv1/projeto_final_linguagens" target="_blank">📦 Repositório GitHub</a>
+    <a class="badge" href="https://www.data.rio/documents/5f63cb34f78b41eb9212f4de42401356/about" target="_blank">🗂️ Fonte dos Dados</a>
+    <span class="badge">🪪 MIT License</span>
+    <span class="badge">📄 CC BY 4.0 (dados)</span>
+    <span class="badge">✅ FAIR Compliant</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- RESUMO -->
+  <section id="resumo">
+    <h2>Resumo / Abstract</h2>
+    <div class="abstract-box">
+      <p>
+        Este trabalho analisa a evolução histórica dos roubos de veículos no Município do Rio de Janeiro
+        ao longo do 1º quadrimestre de cada ano entre 2003 e 2022, com base em dados abertos
+        disponibilizados pelo Portal data.rio. Por meio de um pipeline determinístico em Python,
+        os dados brutos foram ingeridos, normalizados e persistidos em formato comprimido,
+        seguindo os princípios de ciência aberta FAIR. A análise exploratória calculou
+        estatísticas descritivas, identificou tendências na série histórica de incidências,
+        na taxa por 100 mil habitantes e na média mensal de roubos. Os resultados revelam
+        uma trajetória de crescimento até meados da série, com queda acentuada nos últimos
+        anos, indicando possível impacto de políticas de segurança pública e mudanças
+        socioeconômicas. O projeto está integralmente reproduzível a partir do repositório
+        público no GitHub, com ambiente virtual configurável via <code>requirements.txt</code>.
+      </p>
+      <p class="keywords">
+        <strong>Palavras-chave:</strong> segurança pública; roubo de veículos; Rio de Janeiro; análise de dados; Python; ciência aberta.
+      </p>
+    </div>
+  </section>
+
+  <!-- 1. INTRODUÇÃO -->
+  <section id="introducao">
+    <h2>1. Introdução</h2>
+    <p>
+      A criminalidade urbana constitui um dos principais desafios das grandes metrópoles brasileiras.
+      No Rio de Janeiro, o roubo de veículos representa não apenas um impacto econômico direto sobre
+      a população, mas também um indicador proxy da din¢mica territorial do crime organizado.
+      Compreender como essa modalidade delitiva evoluiu ao longo de duas décadas oferece subsídios
+      fundamentais para a formulação de políticas públicas de segurança.
+    </p>
+    <p>
+      O presente estudo utiliza dados abertos do Instituto de Segurança Pública (ISP-RJ),
+      disponibilizados pelo Portal data.rio, cobrindo o 1º quadrimestre de cada ano entre 2003 e 2022.
+      A análise é conduzida por meio de um pipeline reproduzível em Python, seguindo os princípios FAIR.
+    </p>
+
+    <h3>Perguntas de Pesquisa</h3>
+    <ul class="rq-list">
+      <li><strong>RQ1:</strong> Como evoluiu o número absoluto de roubos de veículos no 1º quadrimestre do Rio de Janeiro entre 2003 e 2022?</li>
+      <li><strong>RQ2:</strong> Qual a tendência da taxa de roubo por 100 mil habitantes e em que período ocorreu a maior variação percentual anual?</li>
+      <li><strong>RQ3:</strong> Existe correspondência entre a média mensal de roubos e os picos históricos identificados na série?</li>
+    </ul>
+  </section>
+
+  <!-- 2. METODOLOGIA -->
+  <section id="metodologia">
+    <h2>2. Metodologia e Pipeline de Dados</h2>
+
+    <h3>Fonte de Dados</h3>
+    <p>
+      Os dados foram obtidos do Portal data.rio, repositório oficial de dados abertos da
+      Prefeitura da Cidade do Rio de Janeiro, hospedado na plataforma ArcGIS Hub.
+      O dataset contém as incidências de roubo de veículos por diferença absoluta, diferença
+      percentual, taxa por 100 mil habitantes e média mensal, referentes ao 1º quadrimestre
+      de cada ano entre 2003 e 2022. O arquivo original está no formato Microsoft Excel (.xlsx),
+      com tamanho aproximado de 48 kB e licença CC BY 4.0.
+    </p>
+
+    <h3>Pipeline ETL</h3>
+    <p>
+      O pipeline foi implementado no módulo <code>src/etl.py</code> e segue as etapas:
+      (1) ingestão do arquivo Excel via <code>pandas.read_excel</code>;
+      (2) renomeação posicional de colunas para nomes padronizados;
+      (3) filtragem de linhas válidas (anos entre 2000 e 2030);
+      (4) coerção de tipos numéricos com tratamento de valores ausentes;
+      (5) persistência em CSV comprimido (<code>.csv.gz</code>) no diretório <code>data/processed/</code>.
+    </p>
+
+    <pre><code>def clean(df: pd.DataFrame) -> pd.DataFrame:
+    df = _normalize_columns(df)
+    df = df[pd.to_numeric(df["ano"], errors="coerce").between(2000, 2030)].copy()
+    df["ano"] = df["ano"].astype(int)
+
+    numeric_cols = ["incidencias", "dif_absoluta", "dif_percentual",
+                    "taxa_100k_hab", "media_mensal"]
+    for col in numeric_cols:
+        df[col] = pd.to_numeric(df[col], errors="coerce")
+
+    return df.sort_values("ano").reset_index(drop=True)</code></pre>
+
+    <h3>Tratamento de Dados</h3>
+    <p>
+      Valores de diferença absoluta e percentual para o ano de 2003 foram mantidos como
+      <code>NaN</code> por ausência de ano anterior de referência.
+      Nenhuma imputação artificial foi realizada, preservando a integridade das séries temporais.
+      As colunas foram normalizadas por posição, tornando o pipeline robusto a variações
+      nos cabeçalhos originais do Excel.
+    </p>
+  </section>
+
+  <!-- 3. RESULTADOS -->
+  <section id="resultados">
+    <h2>3. Resultados e Discussão</h2>
+
+    <h3>RQ1 — Evolução absoluta das incidências</h3>
+    <p>
+      O gráfico abaixo apresenta a série histórica do número total de roubos de veículos
+      registrados no 1º quadrimestre de cada ano. É possível identificar o período de maior
+      incidência e a tendência de queda nos anos mais recentes da série.
+    </p>
+    <div class="chart-container">
+      <iframe src="assets/fig_rq1_evolucao.html" title="RQ1 — Evolução de roubos de veículos"></iframe>
+      <p class="chart-caption">Figura 1 — Número de roubos de veículos no 1º quadrimestre, Rio de Janeiro (2003–2022). Fonte: data.rio / ISP-RJ.</p>
+    </div>
+
+    <h3>RQ2 — Taxa por 100 mil habitantes e variação percentual</h3>
+    <p>
+      A normalização pela população residente permite comparações mais equânimes entre anos
+      com diferentes contingentes populacionais. O eixo secundário evidencia os anos com
+      maior variação percentual, positiva ou negativa, em relação ao período anterior.
+    </p>
+    <div class="chart-container">
+      <iframe src="assets/fig_rq2_taxa.html" title="RQ2 — Taxa por 100k hab. e variação percentual"></iframe>
+      <p class="chart-caption">Figura 2 — Taxa por 100 mil habitantes (barras) e variação percentual anual (linha). Fonte: data.rio / ISP-RJ.</p>
+    </div>
+
+    <h3>RQ3 — Média mensal e picos históricos</h3>
+    <p>
+      A média mensal de roubos dentro do 1º quadrimestre confirma os picos identificados
+      na série absoluta, corroborando a robustez dos achados. A escala de cor (vermelho)
+      facilita a identificação visual dos períodos de maior intensidade.
+    </p>
+    <div class="chart-container">
+      <iframe src="assets/fig_rq3_media.html" title="RQ3 — Média mensal de roubos"></iframe>
+      <p class="chart-caption">Figura 3 — Média mensal de roubos de veículos no 1º quadrimestre por ano. Fonte: data.rio / ISP-RJ.</p>
+    </div>
+
+    <h3>Discussão</h3>
+    <p>
+      A análise conjunta das três perguntas de pesquisa indica uma trajetória não linear
+      da criminalidade veicular no Rio de Janeiro. O período entre 2007 e 2012 concentra
+      os picos mais expressivos, coincidindo com o crescimento econômico e a maior frota
+      circulante. A queda observada nos anos seguintes pode ser parcialmente atribuída à
+      expansão das Unidades de Polícia Pacificadora (UPPs) e ao aperfeiçoamento dos
+      sistemas de rastreamento veicular. A crise econômica de 2015–2016 não produziu
+      reversão significativa da tendência de queda, sugerindo que fatores estruturais de
+      policiamento foram determinantes.
+    </p>
+  </section>
+
+  <!-- 4. CONCLUSÃO -->
+  <section id="conclusao">
+    <h2>4. Conclusão</h2>
+    <p>
+      Este estudo demonstrou a viabilidade de um pipeline de análise completamente reproduzível
+      para o estudo da criminalidade veicular no Rio de Janeiro com dados abertos e ferramentas
+      de código aberto. As três perguntas de pesquisa foram respondidas: (RQ1) a série histórica
+      apresenta crescimento até meados da década de 2010, com declínio posterior; (RQ2) a taxa
+      por 100 mil habitantes acompanha essa tendência, com variações anuais relevantes em
+      momentos de mudança de política pública; (RQ3) a média mensal confirma os picos da
+      série absoluta, validando a consistência interna do dataset.
+    </p>
+    <p>
+      Como limitações, destaca-se que o dataset cobre apenas o 1º quadrimestre de cada ano,
+      o que impede generalizações para o restante do período anual. Trabalhos futuros poderiam
+      incorporar os demais quadrimestres, desagregar por bairro ou Área de Planejamento (AP),
+      e cruzar com indicadores socioeconômicos para análise multivariada.
+    </p>
+  </section>
+
+  <!-- 5. FAIR -->
+  <section id="fair">
+    <h2>5. Disponibilidade dos Dados e Declaração FAIR</h2>
+
+    <div class="fair-grid">
+      <div class="fair-item">
+        <strong>🔍 Findable</strong>
+        <span>README.md com resumo, palavras-chave e link perene para a fonte original. Autoria e filiação identificadas no cabeçalho.</span>
+      </div>
+      <div class="fair-item">
+        <strong>🌐 Accessible</strong>
+        <span>Repositório público no GitHub. Artigo publicado via GitHub Pages, responsivo em desktop e mobile. Pipeline sem autenticação proprietária.</span>
+      </div>
+      <div class="fair-item">
+        <strong>🔄 Interoperable</strong>
+        <span>Dados processados em <code>.csv.gz</code> (padrão aberto). Dicionário de variáveis em <code>data/data_dictionary.md</code>.</span>
+      </div>
+      <div class="fair-item">
+        <strong>♻️ Reusable</strong>
+        <span>Código sob licença MIT. Dados e texto sob CC BY 4.0. Dependências pinadas em <code>requirements.txt</code>.</span>
+      </div>
+    </div>
+
+    <h3>Reprodução do pipeline</h3>
+    <pre><code>git clone https://github.com/pdroliv1/projeto_final_linguagens.git
+cd projeto_final_linguagens
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+python data/raw/download_data.py
+python src/etl.py</code></pre>
+  </section>
+
+  <!-- 6. REFERÊNCIAS -->
+  <section id="referencias">
+    <h2>6. Referências</h2>
+    <ul class="ref-list">
+      <li>PREFEITURA DA CIDADE DO RIO DE JANEIRO. <em>Incidências de roubo de veículos — 1º quadrimestre (2003–2022)</em>. data.rio, 2023. Disponível em: &lt;https://www.data.rio/documents/5f63cb34f78b41eb9212f4de42401356/about&gt;. Acesso em: nov. 2024.</li>
+      <li>MCKINNEY, W. <em>Python for Data Analysis</em>. 3. ed. O'Reilly Media, 2022.</li>
+      <li>PANDAS DEVELOPMENT TEAM. <em>pandas documentation</em>. Versão 2.2. Disponível em: &lt;https://pandas.pydata.org/docs/&gt;. Acesso em: nov. 2024.</li>
+      <li>PLOTLY TECHNOLOGIES INC. <em>Collaborative data science</em>. Plotly, 2024. Disponível em: &lt;https://plotly.com/python/&gt;. Acesso em: nov. 2024.</li>
+      <li>WILKINSON, M. D. et al. The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data</em>, v. 3, n. 160018, 2016. DOI: 10.1038/sdata.2016.18.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  Bacharelado em Sistemas de Informação — UnilaSalle Rio de Janeiro &nbsp;|&nbsp; 2024
+  &nbsp;|&nbsp; <a href="https://github.com/pdroliv1/projeto_final_linguagens">GitHub</a>
+</footer>
+
+</body>
+</html>
