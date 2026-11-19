@@ -4,6 +4,7 @@
 **Curso:** Sistemas de Informação - 6° Período  
 **Instituição:** UnilaSalle Rio de Janeiro  
 **Autor:** Pedro Rigo e Rafael Rigo
+**Semestre:** 2026.2
 
 ---
 
